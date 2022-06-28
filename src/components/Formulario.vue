@@ -138,9 +138,14 @@
                         <tr v-for="(usuario,index) in usuarios" :key="index">
                             <td>{{ usuario.nombre }}</td>
                             <td>{{ usuario.edad }}</td>
-                            <td>{{ usuario.nota }}</td>
+                            <td :style="{color: color(usuario.nota).color}">{{ color(usuario.nota).nota }}</td>
                       
                         </tr> 
+
+                        <tr :style="{color: obtenerPromedios.color}">
+                          <th>Promedio Total</th>
+                          <th >{{obtenerPromedios.prom}} </th>
+                        </tr>
                     </table> 
               </div>
             
@@ -196,10 +201,55 @@
         this.campos = this.obtenerCampos()
         this.formState._reset()
 
+      },
+     /*  obtenerPromedios(){
+        let notas= 0
+        let users = 0
+        
+        this.usuarios.forEach(usuario => {
+          notas += usuario.nota
+          users++
+
+        });
+      this.color(notas/users)
+       return notas/users
+      }, */
+        
+      color(nota){
+        let color =''
+        if(nota >=0 && nota <= 3) color='red'
+        else if(nota >3 && nota <= 7) color='yellow'
+        else if(nota >7 && nota <= 10) color='green'
+        
+        return{
+          nota,
+          color
+        }
       }
+
 
     },
     computed: {
+          obtenerPromedios(){
+        let notas= 0
+        let users = 0
+        let prom =0
+        this.usuarios.forEach(usuario => {
+          notas += usuario.nota
+          users++
+
+        });
+        prom = notas/users
+     let color =''
+        if(prom >=0 && prom <= 3) color='red'
+        else if(prom >3 && prom <= 7) color='yellow'
+        else if(prom >7 && prom <= 10) color='green'
+       return {
+        prom,
+        color
+       }
+      },
+        
 
     }
 }
