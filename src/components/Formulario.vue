@@ -27,7 +27,11 @@
       <p>{{pasarMay(texto)}}</p>
       
 
-     <!--  <p>{{codificar(texto)}}</p> -->
+      <p>{{codificar(texto)}}</p>
+
+      <p>{{minMay(texto)}}</p>
+
+      <p>{{mayMin(texto)}}</p>
      </div>
      </div>
 
@@ -66,43 +70,72 @@
         return text.toUpperCase()
       },
 
-/*       codificar(tex){
+       codificar(tex){
         let texto = tex.toLowerCase()
         let texto1 = texto.split('')
-        let tex=[]
-        
-       
-       for (let i = 0; i < texto1.length; i++){
-            if(texto1[i] =='a')this.text[i] = 'u'
-            else if(texto1[i] == 'e')this.text1[i] = 'o'
+        let text1=[]
+        let u ='u'
+        let o = 'o'
+        let e = 'e'
+        let a = 'a'
             
-            else if(texto1[i] == 'o')this.text[i] = 'e'
-           
-            else if(texto1[i] == 'u'){this.text[i] = 'a'
+            for (let i = 0; i < texto1.length; i++){
+            if(texto1[i] == a){
+              console.log(texto1[i])
+              text1.push(u)
+              }else if(texto1[i] === e){
+              text1.push(o)
+              }else if(texto1[i] === o){
+                text1.push(e)
+              }else if(texto1[i] === u){
+                text1.push(a)
+              }else{
+                text1.push(texto1[i])
+              }
+            }
+         console.log('codificar' )
+        return text1.join('')
+            
+       },
 
-           
-          }
-           
-         console.log('codificar',text )
-        return texto1
-      } */
-
-      
-     
-
-
-    },
+       mayMin(tex){
+        let texto = tex.toLowerCase()
+        let texto1 = texto.split('')
+        let texMayMin=[]
+        for (let i = 0; i < texto1.length; i++){
+           if(i%2==0){
+            texMayMin.push(texto1[i].toUpperCase().split())
+           }else{
+             texMayMin.push(texto1[i].toLowerCase().split())
+           }
+        }
+          return texMayMin.join('')
+       },
+       
+        minMay(tex){
+        let texto = tex.toLowerCase()
+        let texto1 = texto.split('')
+        let texMayMin=[]
+        for (let i = 0; i < texto1.length; i++){
+           if(i%2!=0){
+            texMayMin.push(texto1[i].toUpperCase().split())
+           }else{
+             texMayMin.push(texto1[i].toLowerCase().split())
+           }
+        }
+          return texMayMin.join('')
+       }
+ },
     computed: {
       contar(){
         let cant = this.texto.length
         return cant
       }
-        
-     
-      },
+    },
         
 
-    }
+    
+  }
   
 </script>
 
