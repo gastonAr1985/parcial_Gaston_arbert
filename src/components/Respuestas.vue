@@ -37,8 +37,11 @@
       return {
 
         respuestas:[
-          {pregunta: 1, respuesta: 'A'},
-          {pregunta: 2, respuesta: 'A'},
+          {pregunta: 1, respuesta: 'c'},
+          {pregunta: 2, respuesta: 'b'},
+          {pregunta: 3, respuesta: 'c'},
+          {pregunta: 4, respuesta: 'a'},
+          {pregunta: 5, respuesta: 'c'},
 
         ]
 

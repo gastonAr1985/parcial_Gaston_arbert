@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Formulario from './components/Formulario.vue'
 import Respuestas from './components/Respuestas.vue'
 
+
 Vue.use(VueRouter)
 
 export const router = new VueRouter({
@@ -11,5 +12,6 @@ export const router = new VueRouter({
         { path: '/', redirect: '/formulario' },
         { path: '/formulario', component: Formulario },
         { path: '/respuestas', component: Respuestas },
+        
     ]
 })

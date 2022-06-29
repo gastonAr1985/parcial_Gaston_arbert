@@ -15,7 +15,7 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <router-link to="/formulario">
-              <a class="nav-link" href="#">Formulario</a>
+              <a class="nav-link" href="#">Ingresar Texto</a>
             </router-link>
           </li>
         
@@ -24,6 +24,8 @@
               <a class="nav-link" href="#">Respuestas</a>
             </router-link>
           </li>
+
+          
          
         </ul>
       </div>
